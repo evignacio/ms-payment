@@ -1,0 +1,3 @@
+rest-client:
+  order:
+    url: http://localhost:8080/api/v1/order
