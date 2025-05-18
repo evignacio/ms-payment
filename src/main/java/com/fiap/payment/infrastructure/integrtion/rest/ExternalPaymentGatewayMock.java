@@ -30,7 +30,7 @@ public class ExternalPaymentGatewayMock {
     @SneakyThrows
     public void callbackTransaction(String orderId) {
         log.info("Callback transaction for orderId: {}", orderId);
-        Thread.sleep(10000);
+        Thread.sleep(20000);
         updatePaymentStatusUseCase.execute(orderId, "GRANTED");
     }
 }
