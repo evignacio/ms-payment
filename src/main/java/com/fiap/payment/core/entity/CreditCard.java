@@ -77,5 +77,6 @@ public class CreditCard {
         if (token == null || token.isEmpty()) {
             throw new IllegalArgumentException("token null or empty");
         }
+        this.token = token;
     }
 }

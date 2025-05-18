@@ -2,6 +2,7 @@ package com.fiap.payment.infrastructure.controller;
 
 import com.fiap.payment.core.dto.CreateCreditCardDTO;
 import com.fiap.payment.core.usecase.CreateCreditCardUseCase;
+import com.fiap.payment.infrastructure.controller.response.TokenResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +20,8 @@ public class CreditCardController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createCreditCard(@RequestBody CreateCreditCardDTO request) {
+    public ResponseEntity<TokenResponse> createCreditCard(@RequestBody CreateCreditCardDTO request) {
         var token = createCreditCardUseCase.execute(request);
-        return ResponseEntity.ok(token);
+        return ResponseEntity.ok(new TokenResponse(token));
     }
 }

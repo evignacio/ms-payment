@@ -20,8 +20,8 @@ public class CreateCreditCardUseCase {
         log.info("Creating credit card for customer: {}", input.custumerId());
         var creditCard = new CreditCard(
                 input.custumerId(),
-                input.custumerId(),
                 input.number(),
+                input.holderName(),
                 input.expirationDate()
         );
         var creditCardSave = creditCardGateway.save(creditCard);
