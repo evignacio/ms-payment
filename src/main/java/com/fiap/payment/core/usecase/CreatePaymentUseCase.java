@@ -22,7 +22,7 @@ public class CreatePaymentUseCase {
         this.creditCardGateway = creditCardGateway;
     }
 
-    public void execute(CreatePaymentDTO input) throws InterruptedException {
+    public Payment execute(CreatePaymentDTO input)  {
         log.info("Creating payment for orderId: {}", input.orderId());
         var creditCardOpt = creditCardGateway.findByToken(input.tokenCreditCard().token());
         if (creditCardOpt.isEmpty()) {
@@ -35,7 +35,8 @@ public class CreatePaymentUseCase {
                 input.orderId(),
                 input.amount()
         );
-        paymentGateway.save(payment);
+        var paymentSave = paymentGateway.save(payment);
         log.info("Payment create successfully for orderId: {}", input.orderId());
+        return paymentSave;
     }
 }

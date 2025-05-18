@@ -19,7 +19,7 @@ public class TransactionGatewayImpl implements TransactionGateway {
     }
 
     @Override
-    public String request(CreditCard creditCard, String cvv, BigDecimal amount) throws InterruptedException {
+    public String request(CreditCard creditCard, String cvv, BigDecimal amount)  {
         return externalPaymentGatewayMock.requestTransaction(creditCard, cvv, amount.toString());
     }
 }

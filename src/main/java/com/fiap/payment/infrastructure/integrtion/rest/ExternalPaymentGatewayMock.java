@@ -19,11 +19,11 @@ public class ExternalPaymentGatewayMock {
         this.updatePaymentStatusUseCase = updatePaymentStatusUseCase;
     }
 
-    public String requestTransaction(CreditCard creditCard, String cvv, String amount) throws InterruptedException {
+    public String requestTransaction(CreditCard creditCard, String cvv, String amount) {
         log.info("Requesting transaction for credit card: {}", creditCard.getToken());
-        log.info("Transaction request created successfully for credit card: {}", creditCard.getToken());
         var transactionId = UUID.randomUUID().toString();
         CompletableFuture.runAsync(() -> callbackTransaction(transactionId));
+        log.info("Transaction request created successfully for credit card: {}", creditCard.getToken());
         return transactionId;
     }
 

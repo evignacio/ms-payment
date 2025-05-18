@@ -1,3 +1,9 @@
+spring:
+  data:
+    mongodb:
+      initialization-mode: always
+      uri: mongodb://localhost:27017/ms-payment
+
 rest-client:
   order:
     url: http://localhost:8080/api/v1/order

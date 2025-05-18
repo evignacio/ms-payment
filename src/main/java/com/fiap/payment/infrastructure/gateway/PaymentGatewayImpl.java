@@ -25,6 +25,12 @@ public class PaymentGatewayImpl implements PaymentGateway {
     }
 
     @Override
+    public Optional<Payment> findById(String id) {
+        return paymentRepository.findById(id)
+                .map(PaymentMapper::toEntty);
+    }
+
+    @Override
     public Optional<Payment> findByTransactionId(String transactionId) {
         return paymentRepository.findByTransactionId(transactionId)
                 .map(PaymentMapper::toEntty);
