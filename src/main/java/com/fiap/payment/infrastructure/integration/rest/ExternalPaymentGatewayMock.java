@@ -1,4 +1,4 @@
-package com.fiap.payment.infrastructure.integrtion.rest;
+package com.fiap.payment.infrastructure.integration.rest;
 
 import com.fiap.payment.core.entity.CreditCard;
 import com.fiap.payment.core.usecase.UpdatePaymentStatusUseCase;

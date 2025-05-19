@@ -2,7 +2,7 @@ package com.fiap.payment.infrastructure.gateway;
 
 import com.fiap.payment.core.entity.CreditCard;
 import com.fiap.payment.core.gateway.TransactionGateway;
-import com.fiap.payment.infrastructure.integrtion.rest.ExternalPaymentGatewayMock;
+import com.fiap.payment.infrastructure.integration.rest.ExternalPaymentGatewayMock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,7 @@ package com.fiap.payment.infrastructure.gateway;
 
 import com.fiap.payment.core.entity.PaymentStatus;
 import com.fiap.payment.core.gateway.OrderGateway;
-import com.fiap.payment.infrastructure.integrtion.rest.OrderRestClient;
+import com.fiap.payment.infrastructure.integration.rest.OrderRestClient;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
